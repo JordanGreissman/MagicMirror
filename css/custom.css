@@ -1,0 +1,10 @@
+/* Reduce outer spacing around all weather module instances */
+.weather_forecast {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.weather_forecast {
+  margin: 0 !important;
+  padding: 0 !important;
+}
