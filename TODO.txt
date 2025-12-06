@@ -1,0 +1,4 @@
+- Add colors
+- Larger fonts generally
+- Webcam integration
+- Motion sensor to turn on or schedule
