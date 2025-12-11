@@ -1,7 +1,8 @@
 .wmata {
   font-size: 4rem;
   line-height: 1.2;
-  width: 500px;
+
+  /* width: 500px; */
 }
 
 .wmata-title {
