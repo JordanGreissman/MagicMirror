@@ -5,7 +5,7 @@
 }
 
 .xxlarge {
-  font-size: 5rem;
+  font-size: 4rem;
 }
 
 /* Hide the Weather Icons glyph and replace with emoji */
@@ -71,11 +71,11 @@
 }
 
 .module.clock .date {
-  font-size: 5rem;
+  font-size: 4rem;
   line-height: 1;
 }
 
 .module.clock .time {
-  font-size: 5rem;
+  font-size: 4rem;
   line-height: 1;
 }
