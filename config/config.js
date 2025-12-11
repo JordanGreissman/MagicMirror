@@ -37,7 +37,7 @@ let config = {
 		},
 		{
 			module: "compliments",
-			position: "top_right",
+			position: "bottom_left",
 			config: {
 				remoteFile: "https://gist.githubusercontent.com/JordanGreissman/ff7db55a908ac5bc32e9a6f5735d07a2/raw/d60e88720d116518af48ae7f546b4c651db75e0c/compliments.json",
 				classes: "thin xlarge bright"
