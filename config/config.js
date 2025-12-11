@@ -71,7 +71,7 @@ let config = {
 				lon: -77.0369,
 				appendLocationNameToHeader: false,
 				roundTemp: true,
-				maxEntries: 12,
+				maxEntries: 8,
 				fade: false,
 				tableClass: "large",
 				tempColors: { cold: 40, warm: 70 }
@@ -79,7 +79,7 @@ let config = {
 		},
 		{
 			module: "metro",
-			position: "top_left",
+			position: "top_right",
 			config: {}
 		}
 	]

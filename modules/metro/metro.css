@@ -22,7 +22,8 @@
 
 .wmata-left {
   opacity: 0.9;
-  color: red;
+
+  /* color: red; */
 }
 
 .wmata-right {
