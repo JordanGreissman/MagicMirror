@@ -26,38 +26,21 @@ let config = {
 	timeFormat: 12,
 	units: "imperial",
 
-	electronOptions: { fullscreen: false },
-
 	modules: [
 		{
 			module: "clock",
 			position: "top_left",
 			config: {
 				timeFormat: 12,
-				displaySeconds: false
+				displaySeconds: false,
 			}
 		},
 		{
 			module: "compliments",
-			position: "bottom_center",
+			position: "middle_center",
 			config: {
 				remoteFile: "https://gist.githubusercontent.com/JordanGreissman/ff7db55a908ac5bc32e9a6f5735d07a2/raw/d60e88720d116518af48ae7f546b4c651db75e0c/compliments.json",
-				classes: "thin medium bright"
-			}
-		},
-		{
-			module: "weather",
-			position: "top_right",
-			classes: "weather_forecast",
-			config: {
-				weatherProvider: "openmeteo",
-				type: "forecast",
-				lat: 38.9072,
-				lon: -77.0369,
-				appendLocationNameToHeader: false,
-				roundTemp: true,
-				maxNumberOfDays: 1,
-				tableClass: "medium"
+				classes: "thin xxlarge bright"
 			}
 		},
 		{
@@ -65,13 +48,14 @@ let config = {
 			position: "top_right",
 			classes: "weather_current",
 			config: {
+				colored: true,
 				weatherProvider: "openmeteo",
 				type: "current",
 				lat: 38.9072,
 				lon: -77.0369,
 				roundTemp: true,
 				showSun: false,
-				appendLocationNameToHeader: false
+				appendLocationNameToHeader: false,
 			}
 		},
 		{
@@ -79,6 +63,7 @@ let config = {
 			position: "top_right",
 			classes: "weather_hourly",
 			config: {
+				colored: true,
 				weatherProvider: "openmeteo",
 				type: "hourly",
 				lat: 38.9072,
@@ -86,7 +71,9 @@ let config = {
 				appendLocationNameToHeader: false,
 				roundTemp: true,
 				maxEntries: 12,
-				fade: false
+				fade: false,
+				tableClass: "large",
+				tempColors: { cold: 40, warm: 70 }
 			}
 		},
 		{

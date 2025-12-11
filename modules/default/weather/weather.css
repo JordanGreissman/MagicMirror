@@ -47,3 +47,15 @@
   align-items: baseline;
   gap: 10px;
 }
+
+.weather .temp-hot {
+  color: #ff8e99;
+}
+
+.weather .temp-warm {
+  color: #deb6cc;
+}
+
+.weather .temp-cold {
+  color: #bcddff;
+}

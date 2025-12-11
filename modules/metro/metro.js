@@ -13,10 +13,10 @@ Module.register("metro", {
 		this.stationName = null;
 		this.error = null;
 
-		this.sendSocketNotification("METRO_CONFIG", this.config);
-		this._schedule = setInterval(() => {
-			this.sendSocketNotification("METRO_FETCH", null);
-		}, this.config.updateInterval);
+		// this.sendSocketNotification("METRO_CONFIG", this.config);
+		// this._schedule = setInterval(() => {
+		// 	this.sendSocketNotification("METRO_FETCH", null);
+		// }, this.config.updateInterval);
 	},
 
 	// called when module is stopped / MM shuts down

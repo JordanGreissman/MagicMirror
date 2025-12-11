@@ -41,7 +41,8 @@ Module.register("weather", {
 		onlyTemp: false,
 		colored: false,
 		absoluteDates: false,
-		hourlyForecastIncrements: 1
+		hourlyForecastIncrements: 1,
+		tempColors: { cold: 40, warm: 70 }
 	},
 
 	// Module properties.
@@ -147,6 +148,15 @@ Module.register("weather", {
 
 		// Skip some hourly forecast entries if configured
 		const hourlyData = this.weatherProvider.weatherHourly()?.filter((e, i) => (i + 1) % this.config.hourlyForecastIncrements === this.config.hourlyForecastIncrements - 1);
+		hourlyData?.forEach((hour) => {
+			const imperialTemperature = hour.temperature * 1.8 + 32;
+			hour.tempColor = imperialTemperature < this.config.tempColors.cold ? "temp-cold" : imperialTemperature < this.config.tempColors.warm ? "temp-warm" : "temp-hot";
+		});
+
+		if (currentData) {
+			const imperialTemperature = currentData.temperature * 1.8 + 32;
+			currentData.tempColor = imperialTemperature < this.config.tempColors.cold ? "temp-cold" : imperialTemperature < this.config.tempColors.warm ? "temp-warm" : "temp-hot";
+		}
 
 		return {
 			config: this.config,

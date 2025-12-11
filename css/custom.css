@@ -1,10 +1,81 @@
 /* Reduce outer spacing around all weather module instances */
-.weather_forecast {
+.weather-forecast {
   margin: 0 !important;
   padding: 0 !important;
 }
 
-.weather_forecast {
-  margin: 0 !important;
-  padding: 0 !important;
+.xxlarge {
+  font-size: 5rem;
+}
+
+/* Hide the Weather Icons glyph and replace with emoji */
+.module.weather .wi {
+  font-family: "Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji", sans-serif !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+}
+
+/* Hide the original icon character (the font glyph) */
+.module.weather .wi::before {
+  content: "" !important;
+}
+
+/* Now inject emoji for specific icon classes */
+.module.weather .wi-day-sunny::before,
+.module.weather .wi-day-clear::before {
+  content: "☀️" !important;
+}
+
+.module.weather .wi-partly-cloudy::before,
+.module.weather .wi-partly-cloud::before,
+.module.weather .wi-day-partly-cloudy::before,
+.module.weather .wi-night-alt-partly-cloudy::before {
+  content: "⛅️" !important;
+}
+
+.module.weather .wi-cloudy::before,
+.module.weather .wi-cloud::before,
+.module.weather .wi-day-cloudy::before,
+.module.weather .wi-day-sunny-overcast::before,
+.module.weather .wi-night-alt-cloudy::before {
+  content: "☁️" !important;
+}
+
+.module.weather .wi-rain::before,
+.module.weather .wi-showers::before,
+.module.weather .wi-day-rain::before,
+.module.weather .wi-night-alt-rain::before {
+  content: "🌧️" !important;
+}
+
+.module.weather .wi-thunderstorm::before,
+.module.weather .wi-day-thunderstorm::before,
+.module.weather .wi-night-alt-thunderstorm::before {
+  content: "⛈️" !important;
+}
+
+.module.weather .wi-snow::before,
+.module.weather .wi-day-snow::before,
+.module.weather .wi-night-alt-snow::before {
+  content: "❄️" !important;
+}
+
+.module.weather .wi-fog::before,
+.module.weather .wi-day-fog::before,
+.module.weather .wi-night-fog::before {
+  content: "🌫️" !important;
+}
+
+.module.weather .wi-night-clear::before {
+  content: "🌙" !important;
+}
+
+.module.clock .date {
+  font-size: 5rem;
+  line-height: 1;
+}
+
+.module.clock .time {
+  font-size: 5rem;
+  line-height: 1;
 }

@@ -12,7 +12,7 @@ const readMockData = (type, extendedData = {}) => {
 
 	switch (type) {
 		case "forecast":
-			fileName = "weather_forecast.json";
+			fileName = "weather-forecast.json";
 			break;
 		case "hourly":
 			fileName = "weather_hourly.json";
