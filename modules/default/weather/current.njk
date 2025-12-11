@@ -7,32 +7,9 @@
 {% endmacro %}
 {% if current %}
   {% if not config.onlyTemp %}
-    <div class="flex large type-temp">
-      {% if config.showIndoorTemperature and indoor.temperature or config.showIndoorHumidity and indoor.humidity %}
-        <span class="medium fas fa-home"></span>
-        <span style="display: inline-block">
-          {% if config.showIndoorTemperature and indoor.temperature %}
-            <sup class="small" style="position: relative; display: block; text-align: left;">
-              <span> {{ indoor.temperature | roundValue | unit("temperature") | decimalSymbol }} </span>
-            </sup>
-          {% endif %}
-          {% if config.showIndoorHumidity and indoor.humidity %}
-            <sub class="small" style="position: relative; display: block; text-align: left;">
-              <span> {{ indoor.humidity | roundValue | unit("humidity") | decimalSymbol }} </span>
-            </sub>
-          {% endif %}
-        </span>
-      {% endif %}
-      {% if current.weatherType %}
-        <span class="light wi weathericon wi-{{ current.weatherType }}"></span>
-      {% endif %}
-      <span class="xxxlarge normal bright {{ current.tempColor }}">{{ current.temperature | roundValue | unit("temperature") | decimalSymbol }}</span>
-      {% if config.showHumidity === "temp" %}
-        <span class="medium bright">{{ humidity() }}</span>
-      {% endif %}
-    </div>
-    {% if (config.showFeelsLike or config.showPrecipitationAmount or config.showPrecipitationProbability) and not config.onlyTemp %}
-      <div class="normal xxlarge feelslike">
+    <div class="flex xlarge type-temp">
+      <span class="xxlarge normal bright ">{{ current.temperature | roundValue | unit("temperature") | decimalSymbol }}</span>
+      <div class="normal xlarge feelslike">
         {% if config.showFeelsLike %}
           <span class="dimmed">
             {% if config.showHumidity === "feelslike" %}
@@ -50,48 +27,13 @@
           <span class="dimmed"> <span class="precipitationLeadText">{{ "PRECIP_POP" | translate }}</span> {{ current.precipitationProbability }}% </span>
         {% endif %}
       </div>
-    {% endif %}
+    </div>
     {% if config.showHumidity === "below" %}
       <span class="medium dimmed">{{ humidity() }}</span>
     {% endif %}
   {% else %}
     <div class="dimmed light small">{{ "LOADING" | translate }}</div>
   {% endif %}
-  <div class="normal large">
-    <span class="wi wi-strong-wind dimmed"></span>
-    <span>
-      {{ current.windSpeed | unit("wind") | round }}
-      {% if config.showWindDirection %}
-        <sup>
-          {% if config.showWindDirectionAsArrow %}
-            <i class="fas fa-long-arrow-alt-down" style="transform:rotate({{ current.windFromDirection }}deg)"></i>
-          {% else %}
-            {{ current.cardinalWindDirection() | translate }}
-          {% endif %}
-          &nbsp;
-        </sup>
-      {% endif %}
-    </span>
-    {% if config.showHumidity === "wind" %}
-      {{ humidity() }}
-    {% endif %}
-    {% if config.showSun %}
-      <span class="wi dimmed wi-{{ current.nextSunAction() }}"></span>
-      <span>
-        {% if current.nextSunAction() === "sunset" %}
-          {{ current.sunset | formatTime }}
-        {% else %}
-          {{ current.sunrise | formatTime }}
-        {% endif %}
-      </span>
-    {% endif %}
-    {% if config.showUVIndex %}
-      <td class="align-right bright uv-index">
-        <div class="wi dimmed wi-hot"></div>
-        {{ current.uv_index }}
-      </td>
-    {% endif %}
-  </div>
 {% endif %}
 <!-- Uncomment the line below to see the contents of the `current` object. -->
 <!-- <div style="word-wrap:break-word" class="xsmall dimmed">{{ current | dump }}</div> -->
