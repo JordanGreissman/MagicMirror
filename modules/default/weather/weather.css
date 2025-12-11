@@ -39,7 +39,7 @@
 }
 
 .weather tr.colored .max-temp {
-  color: #ff8e99;
+  color: red;
 }
 
 .weather .type-temp {
@@ -49,7 +49,7 @@
 }
 
 .weather .temp-hot {
-  color: #ff8e99;
+  color: red;
 }
 
 .weather .temp-warm {

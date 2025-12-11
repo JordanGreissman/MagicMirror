@@ -1,9 +1,11 @@
 html {
   background-color: #0a0a0c;
+  filter: brightness(2);
 }
 
 body {
   background-color: #0a0a0c;
+  margin: 0;
 }
 
 /* Reduce outer spacing around all weather module instances */

@@ -33,6 +33,7 @@ let config = {
 			config: {
 				timeFormat: 12,
 				displaySeconds: false,
+				dateFormat: "dddd, MMMM D"
 			}
 		},
 		{
@@ -78,7 +79,7 @@ let config = {
 		},
 		{
 			module: "metro",
-			position: "top_right",
+			position: "top_left",
 			config: {}
 		}
 	]
